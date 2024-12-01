@@ -1,6 +1,6 @@
 #include "../T9Predict/WordsTree.h"
 
-#include "Catch.hpp"
+#include "catch.hpp"
 #include "../T9Predict/YetAnotherException.h"
 #include "../T9Predict/WordsTreeException.h"
 using namespace std;
