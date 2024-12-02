@@ -10,8 +10,8 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
 endif()
 
-add_subdirectory(02/demos/T9Predict/T9Predict)
-add_subdirectory(02/demos/T9Predict/T9PredictTests)
+add_subdirectory(02/demos/T9Predict)
+add_subdirectory(02/demos/T9PredictTests)
 
 add_subdirectory(03/demos/T9Predict)
 add_subdirectory(03/demos/T9PredictTests)
