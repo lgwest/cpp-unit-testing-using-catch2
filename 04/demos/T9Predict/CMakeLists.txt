@@ -5,8 +5,6 @@ Engine.cpp
 Engine.h
 StringToDigitsEncoder.cpp
 StringToDigitsEncoder.h
-Word.cpp
-Word.h
 WordsNode.h
 WordsTree.cpp
 WordsTree.h

@@ -1,4 +1,4 @@
-project(t9enginetest05)
+project(t9enginetests05)
 
 add_executable(${PROJECT_NAME}
 EngineTests.cpp
