@@ -1,4 +1,4 @@
-#include "../T9Predict/WordsTree.h"
+#include "WordsTree.h"
 
 #include "catch.hpp"
 

@@ -2,7 +2,7 @@
 
 #include "catch.hpp"
 
-#include "../T9Predict/Engine.h"
+#include "Engine.h"
 
 TEST_CASE("Called with empty digit list --> returns no results", "[Init][Empty]")
 {

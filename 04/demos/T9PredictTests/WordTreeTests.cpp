@@ -1,8 +1,8 @@
-#include "../T9Predict/WordsTree.h"
+#include "WordsTree.h"
 
 #include "catch.hpp"
-#include "../T9Predict/YetAnotherException.h"
-#include "../T9Predict/WordsTreeException.h"
+#include "YetAnotherException.h"
+#include "WordsTreeException.h"
 using namespace std;
 
 TEST_CASE("If no words exist GetWords returns empty collection", "[Init]")

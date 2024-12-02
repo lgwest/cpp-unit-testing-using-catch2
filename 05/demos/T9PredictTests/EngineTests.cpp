@@ -2,7 +2,7 @@
 
 #include "catch.hpp"
 
-#include "../T9Predict/Engine.h"
+#include "Engine.h"
 
 TEST_CASE("Called with word encoding and word is known return word")
 {

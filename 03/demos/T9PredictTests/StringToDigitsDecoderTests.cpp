@@ -1,6 +1,6 @@
 #include "catch.hpp"
 
-#include "../T9Predict/StringToDigitsEncoder.h"
+#include "StringToDigitsEncoder.h"
 
 TEST_CASE("Encode single uppercase letter --> return correct digit", "[Single Digit]")
 {

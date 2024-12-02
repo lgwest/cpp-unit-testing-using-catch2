@@ -2,8 +2,8 @@
 
 #include "catch.hpp"
 
-#include "../T9Predict/WordsTree.h"
-#include "../T9Predict/Engine.h"
+#include "WordsTree.h"
+#include "Engine.h"
 
 TEST_CASE("Called with empty digit list --> returns no results")
 {

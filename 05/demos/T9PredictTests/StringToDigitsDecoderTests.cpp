@@ -1,6 +1,6 @@
 #include "catch.hpp"
 
-#include "../T9Predict/StringToDigitsEncoder.h"
+#include "StringToDigitsEncoder.h"
 #include <tuple>
 #include "StringsToValueGenerator.h"
 

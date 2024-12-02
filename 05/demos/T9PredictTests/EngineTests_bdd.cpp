@@ -1,6 +1,6 @@
 #include "catch.hpp"
 
-#include "../T9Predict/Engine.h"
+#include "Engine.h"
 
 SCENARIO("If words are known entering their encoding will return all words")
 {

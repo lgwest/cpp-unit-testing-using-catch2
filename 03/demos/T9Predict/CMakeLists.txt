@@ -10,4 +10,4 @@ WordsTree.cpp
 WordsTree.h
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_CURRENT_SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR})
