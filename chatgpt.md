@@ -87,6 +87,8 @@ This issue occurs because the active build configuration in VS Code (`Debug`, `R
 
 why shall I save CMAKE_BUILD_TYPE as a cache variable?
 
+**answer 2**
+
 Saving `CMAKE_BUILD_TYPE` as a **cache variable** in CMake ensures that its value persists between CMake configurations and reconfigurations. This is particularly important for single-config generators (like **Makefiles** or **Ninja**) that rely on `CMAKE_BUILD_TYPE` being set at configuration time to determine the active build configuration (e.g., `Debug`, `Release`).
 
 Here's why you might want to save it as a cache variable:
@@ -143,3 +145,103 @@ You generally shouldn't cache `CMAKE_BUILD_TYPE` if:
 - For multi-config generators, rely on the IDE or build tool to select the active configuration instead of setting `CMAKE_BUILD_TYPE`.
 
 By caching `CMAKE_BUILD_TYPE`, you ensure a stable, consistent configuration for single-config generators, simplifying both development and automated builds.
+
+---
+
+## question 3:
+
+how do I change wich target to run in vs code?
+
+**answer 3:**
+
+In Visual Studio Code, you can change which **target** to run for your CMake project by following these steps:
+
+---
+
+### **1. Use the Command Palette**
+1. **Open the Command Palette**:
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS).
+
+2. **Search for CMake Commands**:
+   - Type `CMake: Set Build Target` and select it.
+
+3. **Choose the Target**:
+   - A list of available targets will appear.
+   - Select the target you want to build and run.
+
+---
+
+### **2. Use the CMake Tools Status Bar**
+1. **Locate the CMake Tools Status Bar**:
+   - At the bottom of VS Code, look for the CMake Tools extension's status bar.
+   - It should display the currently selected build target (e.g., `[Build Target]`).
+
+2. **Change the Build Target**:
+   - Click on the `[Build Target]` field.
+   - A dropdown menu will appear with all available targets in your project.
+   - Select the target you want.
+
+---
+
+### **3. Configure the Launch Target**
+To change the target that runs when you press the **Run** button or use the debugger:
+1. **Open the Command Palette**:
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS).
+
+2. **Set Launch Target**:
+   - Search for `CMake: Set Debug Target`.
+   - A list of executable targets will appear.
+   - Choose the target you want to run/debug.
+
+---
+
+### **4. Modify `launch.json` (Optional)**
+If you want finer control or need to set up a custom configuration:
+1. Open the `.vscode/launch.json` file in your project.
+2. Edit the `program` field to point to the executable for the desired target. For example:
+   ```json
+   {
+       "name": "Run MyTarget",
+       "type": "cppdbg",
+       "request": "launch",
+       "program": "${workspaceFolder}/build/my_executable", // Path to the target
+       "args": [],
+       "cwd": "${workspaceFolder}",
+       "externalConsole": false,
+       "MIMode": "gdb",
+       "miDebuggerPath": "/usr/bin/gdb"
+   }
+   ```
+
+3. Save the file and select this configuration from the **Run and Debug** dropdown.
+
+---
+
+### **5. Set a Default Target**
+To set a default target for the project:
+- Add a `CMakePresets.json` or `CMakeSettings.json` file to your project and specify the target:
+  ```json
+  {
+      "version": 3,
+      "configurePresets": [
+          {
+              "name": "default",
+              "generator": "Ninja",
+              "binaryDir": "${sourceDir}/build",
+              "cacheVariables": {
+                  "CMAKE_BUILD_TYPE": "Debug"
+              },
+              "buildTarget": "my_target" // Default target
+          }
+      ]
+  }
+  ```
+
+---
+
+### **6. Verify the Target**
+- Once selected, verify that the correct target is being built and run by inspecting the output in the terminal or the **CMake Tools Output** panel.
+
+By using these methods, you can easily switch between and configure which target to build and run in Visual Studio Code.
+
+
