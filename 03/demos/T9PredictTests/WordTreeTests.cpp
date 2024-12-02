@@ -1,6 +1,6 @@
 #include "../T9Predict/WordsTree.h"
 
-#include "Catch.hpp"
+#include "catch.hpp"
 
 TEST_CASE("If no words exist GetWords returns empty collection", "[Init]")
 {

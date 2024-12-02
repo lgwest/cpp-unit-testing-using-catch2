@@ -1,4 +1,4 @@
-#include "Catch.hpp"
+#include "catch.hpp"
 
 #include "../T9Predict/Engine.h"
 
